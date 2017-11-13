@@ -10,14 +10,46 @@ require 'faker'
 
 
 puts 'Cleaning database...'
-Article.destroy_all
+User.destroy_all
+Product.destroy_all
+Sale.destroy_all
 
 
-puts 'Creating 10 fake articles...'
-10.times do
-  Article.create(
-    title: Faker::Book.title,
-    content: Faker::Simpsons.quote
+USERCATEGORY = ["User", "Seller"]
+
+puts 'Creating 30 fake Users...'
+30.times do
+  User.create(
+    email: Faker::Internet.email,
+    password: "password",
+    name:Faker::Name.name,
+    nickname: Faker::Twitter.screen_name,
+    address: Faker::Address.street_address,
+    category: USERCATEGORY.sample
+  )
+end
+
+HONEYNAME = ["RichyHony","MezquirizGlamour","GonyPonny","HugoBesugo","HoneyLove","MoistHoney"]
+
+puts 'Creating 30 fake Products ...'
+30.times do
+  Product.create(
+    name: HONEYNAME.sample,
+    price: (20..150).to_a.sample,
+    user_id: User.all.sample.id,
+    description: Faker::Beer.style
+  )
+end
+
+STATUS = ["On it´s way", "Confirmed", "Pending acceptance", "Order awaiting to be confirmed"]
+
+puts 'Creating 30 fake Sales ...'
+30.times do
+  Sale.create(
+    user_id: User.all.sample.id,
+    product_id: Product.all.sample.id,
+    tracking_number: (0..100.000).sample,
+    status: STATUS.sample,
   )
 end
 
