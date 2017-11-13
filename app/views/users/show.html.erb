@@ -1,6 +1,12 @@
 <h2>Hello world</h2>
-<h3><%= @user.name %> <%= @user.type %></h3>
+<h3><%= @user.name %> <%= @user.category %></h3>
 
 <% @user.products.each do |p| %>
 <h3><%= p.name %> <%= p.price %></h3>
 <% end %>
+
+<%= render @html %>
+
+<% if current_user.id == @user.id %>
+  <h2><%= @user.category %></h2>
+  <% end %>

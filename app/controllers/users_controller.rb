@@ -4,6 +4,13 @@ class UsersController < ApplicationController
 
 
   def show
+    if @user.category == "User"
+      @html = "showUser.html.erb"
+    elsif @user.category == "Seller"
+      @html = "showSeller.html.erb"
+    elsif @user.category == "Admin"
+      @html = "showAdmin.html.erb"
+    end
   end
 
 
