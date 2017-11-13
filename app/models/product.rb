@@ -4,6 +4,6 @@ class Product < ApplicationRecord
 
   validates :name, presence: true
   validates :description, presence: true
-  validates :rating, numericality: true
+  validates :price, numericality: true
 
 end
