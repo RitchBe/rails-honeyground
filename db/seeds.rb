@@ -10,9 +10,11 @@ require 'faker'
 
 
 puts 'Cleaning database...'
-User.destroy_all
-Product.destroy_all
 Sale.destroy_all
+
+Product.destroy_all
+
+User.destroy_all
 
 
 USERCATEGORY = ["User", "Seller"]
@@ -48,7 +50,7 @@ puts 'Creating 30 fake Sales ...'
   Sale.create(
     user_id: User.all.sample.id,
     product_id: Product.all.sample.id,
-    tracking_number: (0..100.000).sample,
+    tracking_number: (0..100.000).to_a.sample,
     status: STATUS.sample,
   )
 end
