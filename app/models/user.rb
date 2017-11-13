@@ -1,11 +1,11 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  USERTYPE = ["Admin", "User", "Seller"]
+  USERCATEGORY = ["Admin", "User", "Seller"]
   validates :name, presence: true
   validates :nickname, presence: true
   validates :address, presence: true
-  validates :type, presence: true, inclusion: {in: USERTYPE}
+  validates :category, presence: true, inclusion: {in: USERCATEGORY}
   has_many :sales
   has_many :products
   devise :database_authenticatable, :registerable,
