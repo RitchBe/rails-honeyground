@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+  get 'products/index'
+
+  get 'products/show'
+
+  get 'products/new'
+
+  get 'products/create'
+
+  get 'products/edit'
+
+  get 'products/update'
+
+  get 'products/destroy'
+
+  get 'sales/index'
+
+  get 'sales/show'
+
+  get 'sales/new'
+
+  get 'sales/create'
+
+  get 'sales/edit'
+
+  get 'sales/update'
+
+  get 'sales/destroy'
+
   devise_for :users, :path => 'accounts'
   root to: 'pages#home'
   resources :users  do
