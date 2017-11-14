@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user_id])
+
   end
 
   def new
@@ -28,7 +30,9 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Products.find(params[:id])
+    @user = User.find(params[:user_id])
+
+    @product = Product.find(params[:id])
   end
 
 
@@ -42,7 +46,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to products_path
+    redirect_to user_path(current_user.id)
   end
 
   private
