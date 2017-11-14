@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show]
 
+  def index
+    @sellers = User.where(category: 'Seller')
+  end
+
 
 
   def show
