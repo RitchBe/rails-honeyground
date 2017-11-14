@@ -13,7 +13,8 @@
 
 </div>
 <div class="product-card-footer">
-<li class="space-between"><p><%= p.name %></p>
+<li class="space-between"><p><%= p.name %>  </p>
+  <%= link_to "See more", user_product_path(p.user_id, p.id) %>
 </li>
 </div>
 </div>
