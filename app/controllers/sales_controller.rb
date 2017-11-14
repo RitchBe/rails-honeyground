@@ -26,6 +26,6 @@ class SalesController < ApplicationController
   end
 
   def sale_params
-    params.require(:sale).permit(:user_id, :product_id, :tracking_number)
+    params.require(:sale).permit(:user_id, :product_id, :tracking_number, :status)
   end
 end

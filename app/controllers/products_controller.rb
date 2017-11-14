@@ -3,23 +3,26 @@ class ProductsController < ApplicationController
   before_action :find_product, only: [:show, :edit, :update, :destroy]
 
   def index
-    @products = Products.all
+    @products = Product.all
   end
 
   def show
   end
 
   def new
-    @product = Products.new
+    @user = User.find(params[:user_id])
+
+    @product = Product.new
   end
 
   def create
-    @product = Products.new(product_params)
-
+    @user = User.find(params[:user_id])
+    @product = @user.products.new(product_params)
     if @product.save
-      redirect_to products_path
+      redirect_to user_path(@user.id)
     else
       # GO BACK TO THE FORM
+      puts "not working"
       render :new
     end
   end
@@ -28,25 +31,26 @@ class ProductsController < ApplicationController
     @product = Products.find(params[:id])
   end
 
+
   def update
-    @product = Products.find(params[:id])
+    @product = Product.find(params[:id])
     @product.update(product_params)
 
     redirect_to :back
   end
 
   def destroy
-    @product = Products.find(params[:id])
+    @product = Product.find(params[:id])
     @product.destroy
     redirect_to products_path
   end
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :description)
+    params.require(:product).permit(:name, :price, :description, :user_id)
   end
 
   def find_product
-    @product = Products.find(params[:id])
+    @product = Product.find(params[:id])
   end
 end
