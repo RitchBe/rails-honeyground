@@ -1,9 +1,32 @@
-<h1>Sales of the current user</h1>
+<h2>Your orders:</h2>
+
 <% @sales.each do |sale| %>
   <h2>Product name:<%= Product.find(sale.product_id).name %></h2><!-- To retrieve information about the Product -->
+  <% if current_user.id ==  User.find(Product.find(sale.product_id).user_id).id%>
+  <p>I am the owner of the product</p>
+  <% end %>
   <p>Seller Name: <%= User.find(Product.find(sale.product_id).user_id).name  %></p>
   <p><%= sale.status %></p>
   <p><%= sale.tracking_number %></p>
 <% end %>
+
+
+<% if current_user.category == "Seller" && current_user.id ==  @user.id %>
+  <h2>Current Order of Your farm
+  </h2>
+<% @products.each do |p| %>
+  <p><%= p.name %></p>
+  <% p.user.sales.each do |sale| %>
+  <br>
+  <p>Order By:<%= User.find(sale.user_id).name%></p>
+  <p>Deliver to:<%= User.find(sale.user_id).address%></p>
+
+
+  <p>Current Status: <%= sale.status %></p>
+  <% end %>
+<% end %>
+<% end %>
+
+
 
 
