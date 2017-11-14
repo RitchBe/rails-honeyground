@@ -4,9 +4,11 @@
 <h2><%= @product.name %></h2>
 <h3><%= @product.description %></h3>
 <h3> <%= @product.price %></h3>
+<% if current_user %>
 <h3><%= link_to "Buy", new_user_product_sale_path(current_user.id, @product.id)  %></h3>
-
-
+<% else %>
+<h3><%= link_to "Create an account to buy", new_user_session_path  %></h3>
+<% end %>
 
 <% if current_user && current_user.id == @user.id  %>
 
