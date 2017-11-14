@@ -9,4 +9,6 @@ Rails.application.routes.draw do
       resources :sales , only: [:new, :create, :index, :show]
     end
   end
+
+  mount Attachinary::Engine => "/attachinary"
 end

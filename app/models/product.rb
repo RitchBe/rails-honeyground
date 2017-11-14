@@ -6,4 +6,5 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :price, numericality: true
 
+  has_attachment :photo
 end
