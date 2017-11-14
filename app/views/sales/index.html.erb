@@ -1,2 +1,9 @@
-<h1>Sales#index</h1>
-<p>Find me in app/views/sales/index.html.erb</p>
+<h1>Sales of the current user</h1>
+<% @sales.each do |sale| %>
+  <h2><%= sale.product_id %></h2>
+  <p><%= sale.user_id  %></p>
+  <p><%= sale.status %></p>
+  <p><%= sale.tracking_number %></p>
+<% end %>
+
+
