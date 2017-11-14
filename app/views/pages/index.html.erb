@@ -4,7 +4,8 @@
    <ul>
   <% @sellers.each do |s| %>
 
-      <li><%= s.name %></li>
+      <li><%= s.name %> <%= link_to "See the farm", user_path(id: s.id) %></li>
+
   </ul>
    <% end %>
 </div>
