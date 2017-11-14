@@ -3,20 +3,35 @@ class SalesController < ApplicationController
   before_action :set_sale, only: [:show]
 
   def index
-    @sales = current_user.sales
+    @sales = User.find(current_user.id).sales
+    @products = Product.where(user_id: current_user.id).all
+    @user = User.find(params[:user_id])
+
   end
 
   def show
+    @user = User.find(current_user.id)
+    @product = Product.find(params[:product_id])
+
+
   end
 
   def new
+     @user = User.find(current_user.id)
+     @product = Product.find(params[:product_id])
+
+
     @sale = Sale.new
   end
 
   def create
-    @sale = Sale.create(sale_params)
+    @user = current_user
+    @product = Product.find(params[:product_id])
+    @sale = @user.sales.new(sale_params)
+    @sale.product = @product
+    @sale.save
 
-    redirect_to sale_path(sale)
+    redirect_to user_sales_path(current_user.id)
   end
 
   private
@@ -26,6 +41,6 @@ class SalesController < ApplicationController
   end
 
   def sale_params
-    params.require(:sale).permit(:user_id, :product_id, :tracking_number, :status)
+    params.require(:sale).permit( :tracking_number, :status)
   end
 end
