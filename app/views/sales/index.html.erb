@@ -1,7 +1,7 @@
 <h1>Sales of the current user</h1>
 <% @sales.each do |sale| %>
-  <h2><%= sale.product_id %></h2>
-  <p><%= sale.user_id  %></p>
+  <h2>Product name:<%= Product.find(sale.product_id).name %></h2><!-- To retrieve information about the Product -->
+  <p>Seller Name: <%= User.find(Product.find(sale.product_id).user_id).name  %></p>
   <p><%= sale.status %></p>
   <p><%= sale.tracking_number %></p>
 <% end %>

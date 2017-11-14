@@ -7,16 +7,23 @@ class SalesController < ApplicationController
   end
 
   def show
+    @user = User.find(current_user.id)
+    @product = Product.find(params[:product_id])
+
+
   end
 
   def new
+    @user = User.find(current_user.id)
+    @product = Product.find(params[:product_id])
+
     @sale = Sale.new
   end
 
   def create
     @sale = Sale.create(sale_params)
 
-    redirect_to sale_path(sale)
+    redirect_to user_sales_path(current_user.id)
   end
 
   private

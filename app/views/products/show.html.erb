@@ -4,6 +4,7 @@
 <h2><%= @product.name %></h2>
 <h3><%= @product.description %></h3>
 <h3> <%= @product.price %></h3>
+<h3><%= link_to "Buy", new_user_product_sale_path(current_user.id, @product.id)  %></h3>
 
 
 
