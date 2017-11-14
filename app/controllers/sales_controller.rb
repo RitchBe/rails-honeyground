@@ -3,7 +3,7 @@ class SalesController < ApplicationController
   before_action :set_sale, only: [:show]
 
   def index
-    @sales = Sale.All
+    @sales = current_user.sales
   end
 
   def show
@@ -16,7 +16,7 @@ class SalesController < ApplicationController
   def create
     @sale = Sale.create(sale_params)
 
-     redirect_to sale_path(sale)
+    redirect_to sale_path(sale)
   end
 
   private

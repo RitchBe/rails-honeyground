@@ -50,7 +50,7 @@ puts 'Creating 30 fake Sales ...'
   Sale.create(
     user_id: User.all.sample.id,
     product_id: Product.all.sample.id,
-    tracking_number: (0..100.000).to_a.sample,
+    tracking_number: (0..100000).to_a.sample,
     status: STATUS.sample,
   )
 end
