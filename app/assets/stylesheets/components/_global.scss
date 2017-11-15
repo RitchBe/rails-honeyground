@@ -4,22 +4,29 @@ body {
 }
 
 
-
-
 div.pattern {
+  position:relative;
   background-image: url(asset_path("pattern.png"));
-  height: 500px;
+  height: 700px;
   opacity: 0.1;
-  z-index: 5;
-  position: relative;
+  z-index: 1;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(50%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,0)));
 }
+
 
 .yellow {
   color: #FFFA77;
 }
 
+h1.yellow {
+  letter-spacing: 3px;
+  font-size: 30px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
+}
+
 h2.yellow {
   letter-spacing: 3px;
+  font-size: 20px;
 }
 
 .text-center {
