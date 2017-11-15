@@ -10,7 +10,16 @@
   <div class="pattern" style="bottom: 250px">
 
   </div>
+<div class="wrap">
+  <div class="farm-description">
+    <h2 class= "yellow text-center">WHOW WE ARE</h2>
+    <p class="farm-description-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur a fugit dolores, ex debitis, harum accusantium doloribus explicabo vel saepe voluptatibus labore impedit et sapiente quidem! Accusamus eaque, deleniti possimus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur ad pariatur reiciendis tempore, praesentium perferendis debitis nesciunt amet nemo soluta quia consequatur laudantium voluptas sed nostrum quos ipsum enim! Vel.</p>
+  </div>
 
+  <hr>
+
+
+<h2 class="yellow text-center" style="margin-top: 100px">PRODUCTS</h2>
 <!-- Prototype to have visualization of the database -->
  <ul id="products">
 <div class="products-cards">
@@ -24,14 +33,18 @@
 </div>
 <div class="product-card-footer">
 <li class="space-between"><p><%= p.name %>  </p>
-  <%= link_to "See more", user_product_path(p.user_id, p.id) %>
+  <%= link_to "Details", user_product_path(p.user_id, p.id) %>
 </li>
 </div>
 </div>
 <% end %>
 </ul>
+<div class="add-product text-center">
+<% if current_user && current_user.id == @user.id  %>
+  <h2><%= link_to "Add a new product", new_user_product_path(@user.id), class:"add-product"  %></h2>
+  <% end %>
+  </div>
+</div>
 </div>
 
-<% if current_user && current_user.id == @user.id  %>
-  <h2><%= link_to "Add a new product", new_user_product_path(@user.id)  %></h2>
-  <% end %>
+
