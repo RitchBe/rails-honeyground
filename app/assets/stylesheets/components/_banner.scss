@@ -1,0 +1,16 @@
+.farm-banner, .banner, .footer-banner {
+  background-size: cover;
+  background-position: top;
+  height: 75vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 15px #61686a;
+}
+
+.banner {
+  background-position: center;
+  height: 100vh;
+}
