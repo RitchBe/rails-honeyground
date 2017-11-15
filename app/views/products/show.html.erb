@@ -1,7 +1,28 @@
+<div class="farm-banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.9) 0%, rgba(100,100,100,0.3) 50%), url(<%= asset_path 'Card_banner.png' %>)">
+  <div class="farm-banner-content">
+    <h2><% if @user.nickname %>
+    <%= @user.nickname %>
+      <% end %>
+    </h2>
+  </div>
+
+</div>
+  <div class="pattern" style="bottom: 250px">
+
+  </div>
+
+
+<div class="product-show">
+
+  <div class="product-photo" style="background-image: linear-gradient(-225deg, rgba(255,200,0,0.5) 0%, rgba(150,150,150,0.3) 50%), url(<%= asset_path 'https://butterflywonderland.com/wp-content/uploads/2016/04/honey1.jpg'%>);">
+
+  </div>
+
+
+<div class="product-info">
 <h2><%= @product.name %></h2>
 <h3><%= @product.description %></h3>
-<h3> <%= @product.price %></h3>
-
+<h3> <%= @product.price %> Euros</h3>
 <% if current_user %>
 <h3><%= link_to "Buy", new_user_product_sale_path(current_user.id, @product.id)  %></h3>
 <% else %>
@@ -18,4 +39,11 @@
 <% if @product.photo? %>
   <%= cl_image_tag @product.photo.path, width: 400, height: 300, crop: :fill %>
 <% end %>
+
+
+</div>
+
+</div>
+
+
 
