@@ -1,0 +1,19 @@
+.farms {
+  display: flex;
+  padding-left: 10%;
+  padding-right: 10%;
+  justify-content: center;
+  flex-flow: row wrap;
+
+}
+
+h2.our-farms {
+ margin-top: 250px;
+}
+
+.farm-link {
+  text-decoration: none !important;
+  &:hover {
+  color:#F5D76E !important;
+  }
+  }
