@@ -2,14 +2,16 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   USERCATEGORY = ["Admin", "User", "Seller"]
+  devise :database_authenticatable, :registerable,
+       :recoverable, :rememberable, :trackable, :validatable,
+       :omniauthable, omniauth_providers: [:facebook]
   validates :name, presence: true
-  # validates :address, presence: true
-  validates :category, presence: true, inclusion: {in: USERCATEGORY}
+  validates :nickname, presence: true
+  validates :address, presence: true
+  # validates :category, presence: true, inclusion: {in: USERCATEGORY}
   has_many :sales
   has_many :products
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: [:facebook]
+
 
    # Attachinoray
   has_attachment :photo
