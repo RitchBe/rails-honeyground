@@ -1,22 +1,35 @@
+body {
+  background-color: white !important;
+}
+
 .farm-card {
   position:relative;
   margin-top: 10px;
   margin-left: 20px;
   width:370px;
   height: 440px;
-  padding: 2em;
-  background-color: #101010;
+  background-color: rgb(50,50,50);
   border-radius:5px;
 }
 
-.farm-card-body {
-  background-image: url("http://placehold.it/50x50.jpg");
-  height: 75%;
-  background-size: cover;
+.farm-card-top {
+  background-size: contain;
+  width:100%;
+  height: 60%;
+  overflow:hidden;
+  border-radius: 5px 5px 0px 0px;
+}
 
+.farm-card-image-top {
+    margin-left:-30%;
+    width:520px; /* you can use % */
+    height: auto;
 }
 
 .farm-card-footer {
+  background-color: rgb(75, 75, 75);
+  margin: 0;
+  padding-top: 15px;
 
 }
 
@@ -25,5 +38,22 @@
 }
 
 .avatar {
+  position: absolute;
+  height: 85px;
+  width: 85px;
+  bottom: 40%;
+  left: 35%;
+}
+
+.card-avatar {
+  height: 130px ;
+  width: 85px;
+}
+
+.card-footer {
+  background-color: rgb(50,50,50);
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
 
 }
