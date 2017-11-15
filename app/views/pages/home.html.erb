@@ -34,11 +34,26 @@
 
   <h2 class="yellow">SOME OF OUR FARMS</h2>
   <ul>
+<div class="farms" style="margin-top: 100px">
+    <% @sellers[0,4].each do |s| %>
 
-    <% @sellers[0,5].each do |seller| %>
-  <li><%= seller.name %></li>
+<div class="farm-card"
+  <div class="farm-card-top">
+    <img src="<%= asset_path('Card_banner.png')%>" class="farm-card-image-top" alt="">
+  </div>
+  <div class="farm-avatar">
+    <img src="<%= asset_path('Image_avatar.png')%>" class="card-avatar" alt="">
+
+  </div>
+  <div class="card-footer">
+    <h3 class="yellow text-center"><%= s.name %></h3>
+    <p class="text-center">s.description</p>
+    <%= link_to "See farm",  user_path(s.id), class: "farm-link text-center yellow" %>
+  </div>
+</div>
+<% end %>
 </ul>
-  <% end %>
+</div>
 </div>
 
 
