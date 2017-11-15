@@ -1,1 +1,29 @@
-_card.scss
+.farm-card {
+  position:relative;
+  margin-top: 10px;
+  margin-left: 20px;
+  width:370px;
+  height: 440px;
+  padding: 2em;
+  background-color: #101010;
+  border-radius:5px;
+}
+
+.farm-card-body {
+  background-image: url("http://placehold.it/50x50.jpg");
+  height: 75%;
+  background-size: cover;
+
+}
+
+.farm-card-footer {
+
+}
+
+.card-description {
+
+}
+
+.avatar {
+
+}
