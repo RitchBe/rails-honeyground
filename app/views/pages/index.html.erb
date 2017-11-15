@@ -1,0 +1,11 @@
+<h2>Amazing Seller</h2>
+
+<div class= "sellers-list">
+   <ul>
+  <% @sellers.each do |s| %>
+
+      <li><%= s.name %> <%= link_to "See the farm", user_path(id: s.id) %></li>
+
+  </ul>
+   <% end %>
+</div>

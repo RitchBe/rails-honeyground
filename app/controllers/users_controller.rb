@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show]
 
+  def index
+    @sellers = User.where(category: 'Seller')
+  end
+
 
 
   def show
@@ -20,5 +24,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+end
+
+def user_params
+  params.require(:user).permit(:email, :name, :nickname, :address, :category)
 end
 

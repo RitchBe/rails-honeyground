@@ -1,2 +1,9 @@
-<h1>Sales#new</h1>
-<p>Find me in app/views/sales/new.html.erb</p>
+<%= simple_form_for ([@user, @product, @sale]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :tracking_number, label: "Enter your tracking number"%>
+  <%= f.input :status, label: "Enter the status", collection: Sale::STATUS %>
+  <%= f.submit "Add a sale", class: "btn btn-primary" %>
+<% end %>
+
+
+

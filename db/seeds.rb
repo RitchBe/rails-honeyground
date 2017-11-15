@@ -33,15 +33,20 @@ end
 
 HONEYNAME = ["RichyHony","MezquirizGlamour","GonyPonny","HugoBesugo","HoneyLove","MoistHoney"]
 
-puts 'Creating 30 fake Products ...'
+puts 'Creating 10 fake Products ...'
 30.times do
-  Product.create(
+  product = Product.create(
     name: HONEYNAME.sample,
     price: (20..150).to_a.sample,
     user_id: User.all.sample.id,
     description: Faker::Beer.style
   )
+
+  url = "https://picsum.photos/200/300/?random"
+  product.photo_url = url # Upload happens here
+  product.save
 end
+
 
 STATUS = ["On it´s way", "Confirmed", "Pending acceptance", "Order awaiting to be confirmed"]
 
@@ -50,7 +55,7 @@ puts 'Creating 30 fake Sales ...'
   Sale.create(
     user_id: User.all.sample.id,
     product_id: Product.all.sample.id,
-    tracking_number: (0..100.000).to_a.sample,
+    tracking_number: (0..100000).to_a.sample,
     status: STATUS.sample,
   )
 end
