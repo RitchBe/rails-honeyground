@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 20171116104058) do
     t.string "last_name"
     t.string "token"
     t.datetime "token_expiry"
+    t.float "latitude"
+    t.float "longitude"
     t.integer "hives"
     t.integer "since"
     t.string "validation"
