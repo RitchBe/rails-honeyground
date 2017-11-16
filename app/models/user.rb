@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+
   USERCATEGORY = ["Admin", "User", "Seller"]
   devise :database_authenticatable, :registerable,
        :recoverable, :rememberable, :trackable, :validatable,
@@ -8,13 +9,15 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :nickname, presence: true
   validates :address, presence: true
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
   # validates :category, presence: true, inclusion: {in: USERCATEGORY}
   has_many :sales
   has_many :products
 
 
    # Attachinoray
-  has_attachment :photo
+  # has_attachment :photo
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
