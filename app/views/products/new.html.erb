@@ -1,11 +1,22 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
 
+<div class="container" style="margin-top: 180px;">
+  <div class="row col-xs-12 col-sm-4 col-sm-offset-4 form-container" >
+    <h2 class="text-center log-in">New Product</h2>
 
 <%= simple_form_for ([@user, @product]) do |f| %>
-  <%= f.input :name, label: 'Product Name', error: 'Please specify A honey name' %>
+<div class="form-inputs">
+  <%= f.input :name, label: 'Product Name', error: 'Please specify A honey name', required: false %>
   <%= f.input :price, label: 'Price', type: 'float' %>
-  <%= f.input :description, label: 'Description' %>
-  <%= f.input :photo, as: :attachinary %>
-  <%= f.button :submit %>
+  <%= f.input :description, label: 'Description', required: false %>
+<div class="photo-product-add">
+  <%= f.input :photo, as: :attachinary, label: "Add a picture" %>
+   <!-- <hr class="small" align="left" style="margin-top: 0px;"> -->
+</div>
+</div>
+
+  <div class="form-actions">
+  <%= f.button :submit, class:"confirm-btn" %>
+  </div>
 <% end %>
+</div>
+
