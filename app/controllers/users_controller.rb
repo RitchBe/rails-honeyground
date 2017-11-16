@@ -5,8 +5,6 @@ class UsersController < ApplicationController
     @sellers = User.where(category: 'Seller')
   end
 
-
-
   def show
     if @user.category == "User"
       @html = "showUser.html.erb"

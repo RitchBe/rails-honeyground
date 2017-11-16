@@ -6,7 +6,7 @@ body {
 
 div.pattern {
   position:relative;
-  background-size: 6% 6%;
+  background-size: 5% 6%;
   background-image: url(asset_path("pattern.png"));
   margin-top:-100px;
   height: 700px;
@@ -30,9 +30,19 @@ h2.yellow {
   letter-spacing: 3px;
   font-size: 20px;
 }
-
-.text-center {
-  text-align: center;
+//cards farm names
+h3.yellow {
+  letter-spacing: 3px;
+  font-size: 10px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
+}
+//cards addresses
+.card-address {
+  letter-spacing: 3px;
+  font-size: 7px;
+  padding: 0 22px;
+  color:#FFFFFF;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
 }
 
 
