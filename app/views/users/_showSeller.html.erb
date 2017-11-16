@@ -15,37 +15,35 @@
 <div class="pattern" style="bottom: 320px">
 
 </div>
+<div class="saler-content">
+<div class="farmer-details-wrap">
+	<div class="farm-icons">
+		<div class="grid text-center">
+			<%= image_tag "Hive_icon.png" %>
+			<h2 class="yellow"> hives</h2>
+			<h1 class="yellow"><%= @user.hives %></h1>
+		</div>
+
+		<div class="sticks text-center">
+			<%= image_tag "Since_icon.png" %>
+			<h2 class="yellow"> since</h2>
+			<h1 class="yellow"><%= @user.since %></h1>
+		</div>
+
+		<div class="star text-center">
+			<%= image_tag "Best_icon.png" %>
+			<h2 class="yellow">quality</h2>
+			<h1 class="yellow">4 / 5</h1>
+		</div>
+	</div>
+</div>
+
+
+<hr>
 
 <div class="container container-about">
 	<div class="row content-about">
 		<div class="col-sm-8">
-			<div class="farmer-details-wrap">
-				<div class="farm-icons">
-					<div class="grid text-center">
-						<%= image_tag "Hive_icon.png" %>
-						<h2 class="yellow"> hives</h2>
-						<h1 class="yellow"><%= @user.hives %></h1>
-					</div>
-
-					<div class="sticks text-center">
-						<%= image_tag "Since_icon.png" %>
-						<h2 class="yellow"> since</h2>
-						<h1 class="yellow"><%= @user.since %></h1>
-					</div>
-
-
-
-
-					<div class="star text-center">
-						<%= image_tag "Best_icon.png" %>
-						<h2 class="yellow">quality</h2>
-						<h1 class="yellow">4 / 5</h1>
-					</div>
-				</div>
-			</div>
-
-
-			<hr>
 			<div class="about-wrap">
 				<div class="raw">
 					<div class="farm-description">
@@ -61,7 +59,7 @@
 	</div>
 </div>
 <hr>
-</div>
+
 <div class="products">
 	<h1 class="yellow text-center" style="margin-top: 100px">OUR PRODUCTS</h1>
 	<!-- Prototype to have visualization of the database -->
