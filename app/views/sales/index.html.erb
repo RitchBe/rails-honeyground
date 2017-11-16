@@ -2,37 +2,55 @@
 
 
 <div class="sales-index">
-<h2>Your orders:</h2>
-
+  <div class="sales-container">
+<h2 class="yellow">Your orders:</h2>
+<hr>
 <% if current_user.id == @user.id %>
 
 <% @sales.each do |sale| %>
-  <h2>Product name:<%= Product.find(sale.product_id).name %></h2><!-- To retrieve information about the Product -->
+<div style="width: 80%" class="col-xs-10 col-sm-4 col-sm-offset-3 orders">
+  <h3 class="sale-info product">Product name: <strong> <%= Product.find(sale.product_id).name %></strong></h3><!-- To retrieve information about the Product -->
+
   <% if current_user.id ==  User.find(Product.find(sale.product_id).user_id).id%>
-  <p>I am the owner of the product</p>
+  <p class="product">I am the owner of the product</p>
+
+
   <% end %>
-  <p>Seller Name: <%= User.find(Product.find(sale.product_id).user_id).name  %></p>
-  <p><%= sale.status %></p>
-  <p>Tracking number:<%= sale.tracking_number %></p>
+  <p class="sale-info" >Seller Name: <%= User.find(Product.find(sale.product_id).user_id).name  %> </p>
+
+
+  <p class="sale-info">Status: <strong> <%= sale.status %></strong></p>
+
+
+  <p class="sale-info">Tracking number: <strong> <%= sale.tracking_number %></strong></p>
+
+
 <% end %>
+</div>
 <% end %>
 
 
 <% if current_user.category == "Seller" && current_user.id ==  @user.id %>
-  <h2>Current Order of Your farm
+  <h2 class="yellow" style="margin-top: 200px">Current Order of Your farm
   </h2>
+  <hr>
+
+
 <% @products.each do |p| %>
-  <p><%= p.name %></p>
+  <div style="width: 80%" class="col-xs-10 col-sm-4 col-sm-offset-3">
+  <h3 class="sale-info product">Product: <strong> <%= p.name %></strong></h3>
   <% p.user.sales.each do |sale| %>
 
-  <p>Order By:<%= User.find(sale.user_id).name%></p>
-  <p>Deliver to:<%= User.find(sale.user_id).address%></p>
+  <p class="sale-info">Order By: <strong> <%= User.find(sale.user_id).name%></strong></p>
+  <p class="sale-info">Deliver to: <strong> <%= User.find(sale.user_id).address%></strong></p>
 
 <%= simple_form_for ([p.user, p, sale]) do |f| %>
   <%= f.error_notification %>
-  <%= f.input  :status, label: "Enter the status", collection: Sale::STATUS %>
-  <%= f.submit "Comfirm", class: "btn btn-primary" , selected: sale.status%>
+  <%= f.input  :status, label: "Enter the status", collection: Sale::STATUS%>
+  <%= f.submit "Comfirm", class: "btn btn-primary" , selected: sale.status, class: "confirm-btn"%>
+  <hr class="small">
 <% end %>
+</div>
   <% end %>
 <% end %>
 <% end %>
@@ -42,3 +60,4 @@
 
 
 
+</div>

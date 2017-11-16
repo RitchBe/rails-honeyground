@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
 
    # Attachinoray
-  # has_attachment :photo
+  has_attachment :photo
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
