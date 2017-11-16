@@ -27,7 +27,10 @@ puts 'Creating 30 fake Users...'
     name:Faker::Name.name,
     nickname: Faker::Twitter.screen_name,
     address: Faker::Address.street_address,
-    category: USERCATEGORY.sample
+    category: USERCATEGORY.sample,
+    since: (1970..2017).to_a.sample,
+    hives: (50..200).to_a.sample,
+    validation: "Uncheck"
   )
 end
 
@@ -39,7 +42,10 @@ puts 'Creating 10 fake Products ...'
     name: HONEYNAME.sample,
     price: (20..150).to_a.sample,
     user_id: User.all.sample.id,
-    description: Faker::Beer.style
+    description: Faker::Beer.style,
+    validation: "Uncheck",
+    category: Product::CATEGORIES.sample,
+    year: 2016
   )
 
   url = "https://picsum.photos/200/300/?random"
