@@ -11,6 +11,11 @@
 
       <!-- Links when logged in -->
       <%= link_to "FARMS", index_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% if current_user %>
+      <%= link_to "ORDERS", user_sales_path(current_user.id), class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+
+
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
