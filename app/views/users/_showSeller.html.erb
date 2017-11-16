@@ -1,3 +1,4 @@
+
 <div class="farm-banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.9) 0%, rgba(100,100,100,0.3) 50%), url(<%= asset_path 'Card_banner.png' %>)">
 	<div class="farm-banner-content">
 		<h3 class="yellow"><% if @user.nickname %>
@@ -27,6 +28,27 @@
 			<h2 class="yellow"> since</h2>
 			<h1 class="yellow"><%= @user.since %></h1>
 		</div>
+<%= content_for(:title) do %>
+  <%= @user.name %>
+<% end %>
+
+<div class="farm-banner" style="background-image: url(<%= asset_path 'Card_banner.png' %>)">
+  <div class="farm-banner-content">
+    <h2 class="yellow"><% if @user.nickname %>
+    <%= @user.nickname %>
+      <% end %>
+    </h2>
+  </div>
+
+</div>
+
+<div class="pattern" style="bottom: 250px"></div>
+
+<div class="wrap">
+  <div class="farm-description">
+    <h2 class= "yellow text-center">WHOW WE ARE</h2>
+    <p class="farm-description-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur a fugit dolores, ex debitis, harum accusantium doloribus explicabo vel saepe voluptatibus labore impedit et sapiente quidem! Accusamus eaque, deleniti possimus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur ad pariatur reiciendis tempore, praesentium perferendis debitis nesciunt amet nemo soluta quia consequatur laudantium voluptas sed nostrum quos ipsum enim! Vel.</p>
+  </div>
 
 		<div class="star text-center">
 			<%= image_tag "Best_icon.png" %>
