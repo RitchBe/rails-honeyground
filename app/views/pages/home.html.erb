@@ -37,8 +37,8 @@ Home
 <div class="some-farms text-center" style="height: 500px;">
 
   <h1 class="yellow">SOME OF OUR FARMS</h1>
-  <ul>
-    <div class="farms" style="margin-top: 100px">
+
+    <div class="farms">
       <% @sellers[0,8].each do |s| %>
 
       <a href="<%=user_path(s.id)%>">
@@ -59,7 +59,7 @@ Home
         </div>
       </a>
       <% end %>
-    </ul>
+
   </div>
 </div>
 
@@ -67,5 +67,5 @@ Home
 <div class="pattern" style="top: 250px">
 
 </div>
-<div class="footer-banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.9) 0%, rgba(100,100,100,0.3) 50%), url(<%= asset_path 'Image_honeypot.png' %>)">
+<div class="footer-banner" style="background-image: url(<%= asset_path 'Image_honeypot.png' %>)">
 </div>
