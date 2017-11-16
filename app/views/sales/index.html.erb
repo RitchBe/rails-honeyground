@@ -1,4 +1,10 @@
+
+
+
+<div class="sales-index">
 <h2>Your orders:</h2>
+
+<% if current_user.id == @user.id %>
 
 <% @sales.each do |sale| %>
   <h2>Product name:<%= Product.find(sale.product_id).name %></h2><!-- To retrieve information about the Product -->
@@ -7,7 +13,8 @@
   <% end %>
   <p>Seller Name: <%= User.find(Product.find(sale.product_id).user_id).name  %></p>
   <p><%= sale.status %></p>
-  <p><%= sale.tracking_number %></p>
+  <p>Tracking number:<%= sale.tracking_number %></p>
+<% end %>
 <% end %>
 
 
@@ -17,16 +24,21 @@
 <% @products.each do |p| %>
   <p><%= p.name %></p>
   <% p.user.sales.each do |sale| %>
-  <br>
+
   <p>Order By:<%= User.find(sale.user_id).name%></p>
   <p>Deliver to:<%= User.find(sale.user_id).address%></p>
 
-
-  <p>Current Status: <%= sale.status %></p>
+<%= simple_form_for ([p.user, p, sale]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input  :status, label: "Enter the status", collection: Sale::STATUS %>
+  <%= f.submit "Comfirm", class: "btn btn-primary" , selected: sale.status%>
+<% end %>
   <% end %>
 <% end %>
 <% end %>
 
+
+</div>
 
 
 

@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116100813) do
+
+ActiveRecord::Schema.define(version: 20171116104058) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +39,9 @@ ActiveRecord::Schema.define(version: 20171116100813) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+    t.string "validation"
+    t.string "category"
+    t.integer "year"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -77,6 +82,10 @@ ActiveRecord::Schema.define(version: 20171116100813) do
     t.datetime "token_expiry"
     t.float "latitude"
     t.float "longitude"
+    t.integer "hives"
+    t.integer "since"
+    t.string "validation"
+
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
