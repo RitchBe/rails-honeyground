@@ -5,18 +5,19 @@
   <div class="row col-xs-12 col-sm-6 col-sm-offset-3">
     <h2 class="yellow text-center"> Sign up</h2>
     <div class="form-inputs">
-    <%= f.input :name %>
+    <%= f.input :name, required: false %>
     <%= f.input :category, priority: ['User'], collection: ["User","Seller"]%>
-    <%= f.input :email, required: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-    <%= f.input :photo, as: :attachinary %>
+    <%= f.input :email, required: false %>
+    <%= f.input :password, required: false, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, required: false %>
+    <%= f.input :photo, as: :attachinary, label: "Add a photo" %>
+
     <div>
   </div>
 </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: "confirm-btn" %>
   </div>
 <% end %>
 

@@ -27,7 +27,7 @@
 }
 
 
-.form-links, label[for=product_photo] {
+.form-links, label[for=product_photo], label[for=user_photo]{
   color: #FFF98B;
   cursor: pointer;
   padding-top: 5px;
@@ -40,7 +40,7 @@
   }
 }
 
-label[for=product_photo] {
+label[for=product_photo], label[for=user_photo] {
   border-bottom: 1px solid  #FFF98B;
   padding-bottom: 8px;
 }
@@ -65,7 +65,7 @@ label.control-label {
 
 
 //Had some trouble because of attachinary label and button
-#product_photo[type=file] {
+#product_photo[type=file], #user_photo[type=file] {
     cursor: inherit;
     display: block;
     filter: alpha(opacity=0);
