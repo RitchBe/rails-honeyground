@@ -6,7 +6,9 @@ body {
 
 div.pattern {
   position:relative;
+  background-size: 6% 6%;
   background-image: url(asset_path("pattern.png"));
+  margin-top:-100px;
   height: 700px;
   opacity: 0.1;
   z-index: 1;
