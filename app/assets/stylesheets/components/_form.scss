@@ -32,6 +32,10 @@
   padding-top: 5px;
   letter-spacing: 2px;
   margin-top: 10px !important;
+  &:hover {
+      color: #F5D76E;
+     text-decoration: none;
+  }
 }
 
 .form-control {
@@ -43,3 +47,4 @@
 .form-control {
   border:none;
 }
+
