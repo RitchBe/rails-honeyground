@@ -43,8 +43,7 @@ hr {
 	height: 100px;
 	padding: 0px 50px;
 	color: rgba(0,0,0,0.3);
-	position: relative;
-	top: 550px;
+
 
 }
 .farm-description-text {
@@ -55,10 +54,6 @@ hr {
 	margin-bottom: 100px;
 }
 
-.wrap {
-	position: relative;
-	bottom: 350px;
-}
 
 .container-about{
 	position: relative;
@@ -68,18 +63,19 @@ hr {
 	width: 100%;
 	border-color: yellow;
 
-	.content-about {
-		margin-top: -520px;
-	}
 }
 
+.saler-content{
+	position: relative;
+	bottom: 550px;
+}
 #map {
     width: 100%;
-    height: 100vh;
+    height: 70vh;
     background: blue;
     flex: 0 0 450px;
     position: sticky !important;
-    top: 10px !important;
+    top: 20px !important;
 }
 
 a.add-product {
