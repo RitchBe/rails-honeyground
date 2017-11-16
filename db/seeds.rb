@@ -26,7 +26,7 @@ puts 'Creating 30 fake Users...'
     password: "password",
     name:Faker::Name.name,
     nickname: Faker::Twitter.screen_name,
-    address: Faker::Address.street_address,
+    address: Faker::Address.street_address(include_secondary = "Lisbon"),
     category: USERCATEGORY.sample,
     since: (1970..2017).to_a.sample,
     hives: (50..200).to_a.sample,
