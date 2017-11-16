@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/index', to: 'pages#index'
   resources :users  do
-      resources :sales , only: [:index, :show]
+      resources :sales , only: [:index, :show, :update]
     resources :products do
-      resources :sales , only: [:new, :create, :index, :show]
+      resources :sales , only: [:new, :create, :index, :show, :update]
     end
   end
 
