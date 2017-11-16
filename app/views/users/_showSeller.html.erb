@@ -1,4 +1,8 @@
-<div class="farm-banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.9) 0%, rgba(100,100,100,0.3) 50%), url(<%= asset_path 'Card_banner.png' %>)">
+<%= content_for(:title) do %>
+  <%= @user.name %>
+<% end %>
+
+<div class="farm-banner" style="background-image: url(<%= asset_path 'Card_banner.png' %>)">
   <div class="farm-banner-content">
     <h2 class="yellow"><% if @user.nickname %>
     <%= @user.nickname %>
@@ -7,9 +11,9 @@
   </div>
 
 </div>
-  <div class="pattern" style="bottom: 250px">
 
-  </div>
+<div class="pattern" style="bottom: 250px"></div>
+
 <div class="wrap">
   <div class="farm-description">
     <h2 class= "yellow text-center">WHOW WE ARE</h2>
