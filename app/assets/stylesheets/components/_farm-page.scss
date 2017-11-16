@@ -1,11 +1,45 @@
+
+
 hr {
   height: 1px;
   border-color: #FFFA77;
   width: 75%;
 }
+.farmer-icons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 100px;
+  margin-top:-520px;
+}
 
-htilte{
+
+.hive, .since, .validate {
+  width: 20%;
+}
+
+.htilte {
 font-size: 200%;
+}
+
+.farm-details{
+	  width: 100%;
+  padding: 0 20%;
+  font-size: 120%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+}
+.farm-details-wrap{
+	  background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+  position: relative;
+  top: 550px;
+
 }
 .farm-description-text {
   width: 100%;

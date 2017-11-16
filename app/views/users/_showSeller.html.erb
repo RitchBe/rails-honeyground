@@ -1,53 +1,78 @@
 <div class="farm-banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.9) 0%, rgba(100,100,100,0.3) 50%), url(<%= asset_path 'Card_banner.png' %>)">
-  <div class="farm-banner-content">
-    <h0 class="yellow"><% if @user.nickname %>
-    <%= @user.nickname %>
-      <% end %>
-    </h0>
-    <br>
-    <h1 class="yellow"><%= @user.address %>
-    	</end>
-    </h1>
-  </div>
+	<div class="farm-banner-content">
+		<h3 class="yellow"><% if @user.nickname %>
+			<%= @user.nickname.upcase %>
+			<% end %>
+		</h3>
+		<br>
+		<h1 class="yellow"><%= @user.address.upcase %>
+		</end>
+	</h1>
+</div>
 
 </div>
-  <div class="pattern" style="bottom: 250px">
+<div class="pattern" style="bottom: 320px">
 
-  </div>
-<div class="wrap">
-  <div class="farm-description">
-    <h2 class= "yellow text-center">WHOW WE ARE</h2>
-    <p class="farm-description-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur a fugit dolores, ex debitis, harum accusantium doloribus explicabo vel saepe voluptatibus labore impedit et sapiente quidem! Accusamus eaque, deleniti possimus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur ad pariatur reiciendis tempore, praesentium perferendis debitis nesciunt amet nemo soluta quia consequatur laudantium voluptas sed nostrum quos ipsum enim! Vel.</p>
-  </div>
+</div>
+<div class="farmer-details-wrap">
+	<div class="home-icons">
+		<div class="grid text-center">
+			<%= image_tag "Hive_icon.png" %>
+			<h2 class="yellow"> hives</h2>
+			<h1 class="yellow"><%= @user.hives %></h1>
+		</div>
 
-  <hr>
+		<div class="sticks text-center">
+			<%= image_tag "Since_icon.png" %>
+			<h2 class="yellow"> since</h2>
+			<h1 class="yellow"><%= @user.since %></h1>
+		</div>
+
+		<div class="star text-center">
+			<%= image_tag "Best_icon.png" %>
+			<h2 class="yellow">quality</h2>
+			<h1 class="yellow">4 / 5</h1>
+		</div>
+	</div>
+</div>
+<hr>
+
+<div class="farm-description">
+	<h1 class= "yellow text-center">WHO WE ARE</h1>
+	<p class="farm-description-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur a fugit dolores, ex debitis, harum accusantium doloribus explicabo vel saepe voluptatibus labore impedit et sapiente quidem! Accusamus eaque, deleniti possimus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur ad pariatur reiciendis tempore, praesentium perferendis debitis nesciunt amet nemo soluta quia consequatur laudantium voluptas sed nostrum quos ipsum enim! Vel.</p>
+</div>
 
 
-<h2 class="yellow text-center" style="margin-top: 100px">PRODUCTS</h2>
+<hr>
+
+
+<h1 class="yellow text-center" style="margin-top: 100px">OUR PRODUCTS</h1>
 <!-- Prototype to have visualization of the database -->
- <ul id="products">
-<div class="products-cards">
-<% @user.products.each do |p| %>
+<ul id="products">
+	<div class="products-cards">
+		<% @user.products.each do |p| %>
 
-<div class="product-card" style="background-image: linear-gradient(-225deg, rgba(200,200,200,0.8) 0%, rgba(50,50,50,0.0) 50%)">
+		<div class="product-card" style="background-image: linear-gradient(-225deg, rgba(200,200,200,0.8) 0%, rgba(50,50,50,0.0) 50%)">
 
 
-     <div class="product-card-body" style="background-image: linear-gradient(-225deg, rgba(255,200,0,0.5) 0%, rgba(150,150,150,0.3) 50%), url(<%= asset_path 'https://butterflywonderland.com/wp-content/uploads/2016/04/honey1.jpg'%>);" >
+			<div class="product-card-body" style="background-image: linear-gradient(-225deg, rgba(255,200,0,0.5) 0%, rgba(150,150,150,0.3) 50%), url(<%= asset_path 'https://butterflywonderland.com/wp-content/uploads/2016/04/honey1.jpg'%>);" >
 
-</div>
-<div class="product-card-footer">
-<li class="space-between"><p><%= p.name %>  </p>
-  <%= link_to "Details", user_product_path(p.user_id, p.id) %>
-</li>
-</div>
-</div>
-<% end %>
-</ul>
-<div class="add-product text-center">
-<% if current_user && current_user.id == @user.id  %>
-  <h2><%= link_to "Add a new product", new_user_product_path(@user.id), class:"add-product"  %></h2>
-  <% end %>
-  </div>
+			</div>
+			<div class="product-card-footer">
+				<li class="space-between"><p><%= p.name %>  </p>
+					<%= link_to "Details", user_product_path(p.user_id, p.id) %>
+				</li>
+			</div>
+		</div>
+		<% end %>
+	</ul>
+	<div class="add-product text-center">
+		<% if current_user && current_user.id == @user.id  %>
+		<h1 class="yellow"> Want to sell more products?</h1>
+		<br>
+		<h2><%= link_to "Add a new product", new_user_product_path(@user.id), class:"add-product"  %></h2>
+		<% end %>
+	</div>
 </div>
 </div>
 
