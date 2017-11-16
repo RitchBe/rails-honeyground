@@ -1,53 +1,97 @@
-<%= content_for(:title) do %>
-  <%= @user.name %>
-<% end %>
 
-<div class="farm-banner" style="background-image: url(<%= asset_path 'Card_banner.png' %>)">
-  <div class="farm-banner-content">
-    <h2 class="yellow"><% if @user.nickname %>
-    <%= @user.nickname %>
-      <% end %>
-    </h2>
-  </div>
+<div class="farm-banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.9) 0%, rgba(100,100,100,0.3) 50%), url(<%= asset_path 'Card_banner.png' %>)">
+	<div class="farm-banner-content text-center">
+		<h3 class="yellow"><% if @user.nickname %>
+			<%= @user.nickname.upcase %>
+			<% end %>
+		</h3>
+		<br>
+		<h1 class="yellow"><%= @user.address.upcase %>
+		</end>
+	</h1>
+</div>
+
+</div>
+<div class="pattern" style="bottom: 320px">
 
 </div>
 
-<div class="pattern" style="bottom: 250px"></div>
+<div class="container container-about">
+	<div class="row content-about">
+		<div class="col-sm-8">
+			<div class="farmer-details-wrap">
+				<div class="farm-icons">
+					<div class="grid text-center">
+						<%= image_tag "Hive_icon.png" %>
+						<h2 class="yellow"> hives</h2>
+						<h1 class="yellow"><%= @user.hives %></h1>
+					</div>
 
-<div class="wrap">
-  <div class="farm-description">
-    <h2 class= "yellow text-center">WHOW WE ARE</h2>
-    <p class="farm-description-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur a fugit dolores, ex debitis, harum accusantium doloribus explicabo vel saepe voluptatibus labore impedit et sapiente quidem! Accusamus eaque, deleniti possimus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur ad pariatur reiciendis tempore, praesentium perferendis debitis nesciunt amet nemo soluta quia consequatur laudantium voluptas sed nostrum quos ipsum enim! Vel.</p>
-  </div>
-
-  <hr>
-
-
-<h2 class="yellow text-center" style="margin-top: 100px">PRODUCTS</h2>
-<!-- Prototype to have visualization of the database -->
- <ul id="products">
-<div class="products-cards">
-<% @user.products.each do |p| %>
-
-<div class="product-card" style="background-image: linear-gradient(-225deg, rgba(200,200,200,0.8) 0%, rgba(50,50,50,0.0) 50%)">
+					<div class="sticks text-center">
+						<%= image_tag "Since_icon.png" %>
+						<h2 class="yellow"> since</h2>
+						<h1 class="yellow"><%= @user.since %></h1>
+					</div>
 
 
-     <div class="product-card-body" style="background-image: linear-gradient(-225deg, rgba(255,200,0,0.5) 0%, rgba(150,150,150,0.3) 50%), url(<%= asset_path 'https://butterflywonderland.com/wp-content/uploads/2016/04/honey1.jpg'%>);" >
 
+
+					<div class="star text-center">
+						<%= image_tag "Best_icon.png" %>
+						<h2 class="yellow">quality</h2>
+						<h1 class="yellow">4 / 5</h1>
+					</div>
+				</div>
+			</div>
+
+
+			<hr>
+			<div class="about-wrap">
+				<div class="raw">
+					<div class="farm-description">
+						<h1 class= "yellow text-center">WHO WE ARE</h1>
+						<p class="farm-description-text text-center">L’ENTREPRISE<br>Miel des Ruisseaux, située à Alma, est un producteur de miel et d’hydromel.  Ses ruchers se retrouvent dans les municipalités d’Alma et de Saint-Gédéon.  Ces derniers regroupent plus de 400 ruches où dans chacune d’elles s’activent  près de 100,000 abeilles.<br><br>NOS PRODUITS<br>Les produits offerts sont le miel, le miel crémeux, le chocolat noir ou au lait  rempli de miel crémeux, le choco-miel et l’hydromel qui se décline en 4 sortes :  l’hydromel régulier, l’hydromel en fût de chêne, l’hydromel aux Bleuets (Le Rêve Bleu)  et le Fleur-de-Lysé.<br><br>HISTORIQUE<br>Patrick Fortier, propriétaire de l’entreprise, fonde Miel des Ruisseaux en 1998.  En 2007, il commence la production de l’hydromel et en devient l’unique producteur  au Saguenay-Lac-Saint-Jean. L’hydromel, un succès pour l’entreprise, gagne 2 médailles  d’argent en 2010 et 2011 ainsi qu’une mention de distinction 2013. L’entreprise est fière de ses réalisations et de son implication en tant que producteur régional d’un produit 100% naturel et écologique.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4"  style="display: flex;" >
+			<div id="map"></div>
+		</div>
+	</div>
 </div>
-<div class="product-card-footer">
-<li class="space-between"><p><%= p.name %>  </p>
-  <%= link_to "Details", user_product_path(p.user_id, p.id) %>
-</li>
+<hr>
 </div>
-</div>
-<% end %>
-</ul>
-<div class="add-product text-center">
-<% if current_user && current_user.id == @user.id  %>
-  <h2><%= link_to "Add a new product", new_user_product_path(@user.id), class:"add-product"  %></h2>
-  <% end %>
-  </div>
+<div class="products">
+	<h1 class="yellow text-center" style="margin-top: 100px">OUR PRODUCTS</h1>
+	<!-- Prototype to have visualization of the database -->
+	<ul id="products">
+		<div class="products-cards">
+			<% @user.products.each do |p| %>
+
+			<div class="product-card" style="background-image: linear-gradient(-225deg, rgba(200,200,200,0.8) 0%, rgba(50,50,50,0.0) 50%)">
+
+
+				<div class="product-card-body" style="background-image: linear-gradient(-225deg, rgba(255,200,0,0.5) 0%, rgba(150,150,150,0.3) 50%), url(<%= asset_path 'https://butterflywonderland.com/wp-content/uploads/2016/04/honey1.jpg'%>);" >
+
+				</div>
+				<div class="product-card-footer">
+					<li class="space-between"><p><%= p.name %>  </p>
+						<%= link_to "Details", user_product_path(p.user_id, p.id) %>
+					</li>
+				</div>
+			</div>
+			<% end %>
+		</ul>
+		<div class="add-product text-center">
+			<% if current_user && current_user.id == @user.id  %>
+			<h1 class="yellow"> Want to sell more products?</h1>
+			<br>
+			<h2><%= link_to "Add a new product", new_user_product_path(@user.id), class:"add-product"  %></h2>
+			<% end %>
+		</div>
+	</div>
+
 </div>
 </div>
 

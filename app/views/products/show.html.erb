@@ -5,10 +5,14 @@
 
 <div class="farm-banner" style="background-image:url(<%= asset_path 'Card_banner.png' %>)">
   <div class="farm-banner-content">
-    <h2 class="yellow"><% if @user.nickname %>
+    <h0 class="yellow"><% if @user.nickname %>
     <%= @user.nickname %>
       <% end %>
-    </h2>
+       </h0>
+    <br>
+    <h1 class="yellow"><%= @user.address %>
+    	</end>
+    </h1>
   </div>
 
 </div>
