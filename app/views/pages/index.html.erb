@@ -293,19 +293,22 @@
 
 <div class="farms">
 <% @sellers.each do |s| %>
-<div class="farm-card">
-  <div class="farm-card-top">
-    <img src="<%= asset_path('Card_banner.png')%>" class="farm-card-image-top" alt="">
-  </div>
-  <div class="farm-avatar">
-    <img src="<%= asset_path('Image_avatar.png')%>" class="card-avatar" alt="">
-
+<a href="<%=user_path(s.id)%>">
+  <div class="farm-card">
+    <div class="farm-card-top">
+      <img src="<%= asset_path('Card_banner.png')%>" class="farm-card-image-top" alt="">
+    </div>
+  <div class="yellow-card-line"></div>
+  <div class="farm-avatar-shape">
+    <div class="farm-avatar">
+      <img src="<%= asset_path('Image_avatar.png')%>" class="card-avatar" alt="">
+    </div>
   </div>
   <div class="card-footer">
-    <h3 class="yellow text-center"><%= s.name %></h3>
-    <p class="text-center">s.description</p>
-    <%= link_to "See farm",  user_path(s.id), class: "farm-link text-center yellow" %>
+    <h3 class="yellow text-center"><%= s.name.upcase %></h3>
+    <p class="card-address text-center"><%=s.address.upcase %></p>
   </div>
 </div>
+</a>
 <% end %>
 </div>
