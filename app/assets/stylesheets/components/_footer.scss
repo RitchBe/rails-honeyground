@@ -1,19 +1,17 @@
 #myFooter {
-  background-color: #373a48;
-  color:white;
+  color: white;
   width: 100%;
 }
 
 #myFooter .footer-copyright{
-  background-color: #383737;
-  padding-top:3px;
-  padding-bottom:3px;
+  padding-top:2px;
+  padding-bottom:2px;
   text-align: center;
 }
 
 #myFooter .footer-copyright p{
   margin:10px;
-  color: #ccc;
+  color: white;
 }
 
 #myFooter ul{
@@ -24,7 +22,7 @@
 }
 
 #myFooter h5{
-  font-size: 18px;
+  font-size: 15px;
     color: white;
     font-weight: bold;
     margin-top: 30px;
@@ -33,6 +31,7 @@
 #myFooter a{
   color:#d2d1d1;
   text-decoration: none;
+  font-size: 12px;
 }
 
 #myFooter a:hover, #myFooter a:focus{
