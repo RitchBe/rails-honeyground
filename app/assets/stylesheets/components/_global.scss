@@ -45,3 +45,18 @@ h0.yellow{
 .confirm {
 	margin-top: 500px;
 }
+
+
+
+
+  html {
+  @media screen and (max-width: 1250px) {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+}
+
+
