@@ -22,7 +22,7 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <% avatar_url = current_user.facebook_picture_url || (current_user.photo? ? current_user.photo.path : "http://kitt.lewagon.com/placeholder/users/ssaunier") %>
+          <% avatar_url = "http://kitt.lewagon.com/placeholder/users/ssaunier" %>
 
           <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <!--<%= image_tag "", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>-->
