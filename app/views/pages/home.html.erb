@@ -18,18 +18,18 @@ Home
  <div class="grid text-center">
    <%= image_tag "Icon_HoneyGrid.png" %>
    <h2 class="yellow"> PURE</h2>
-   <p>Possimus aliquid dolore ea fugiat nemo quia. Sit ex atque rem illum! Nemo omnis, voluptate nostrum, totam commodi aliquam.ossimus aliquid dolore ea fugiat nemo quia. Sit ex atque rem illum! Nemo omnis, voluptate nostrum, totam commodi aliquam</p>
+   <p>Possimus aliquid dolore ea fugiat nemo quia. Sit ex atque rem illum! Nemo omnis, voluptate nostrum, totam commodi aliquam.</p>
  </div>
  <div class="sticks text-center">
    <%= image_tag "Icon_HoneySticks.png" %>
    <h2 class="yellow"> HONEST</h2>
-   <p>Possimus aliquid dolore ea fugiat nemo quia. Sit ex atque rem illum! Nemo omnis, voluptate nostrum, totam commodi aliquam.ossimus aliquid dolore ea fugiat nemo quia. Sit ex atque rem illum! Nemo omnis, voluptate nostrum, totam commodi aliquam</p>
+   <p>Possimus aliquid dolore ea fugiat nemo quia. Sit ex atque rem illum! Nemo omnis, voluptate nostrum, totam commodi aliquam.</p>
  </div>
 
  <div class="star text-center">
    <%= image_tag "Icon_Star.png" %>
    <h2 class="yellow"> BEST QUALITY</h2>
-   <p>Possimus aliquid dolore ea fugiat nemo quia. Sit ex atque rem illum! Nemo omnis, voluptate nostrum, totam commodi aliquam.ossimus aliquid dolore ea fugiat nemo quia. Sit ex atque rem illum! Nemo omnis, voluptate nostrum, totam commodi aliquam</p>
+   <p>Possimus aliquid dolore ea fugiat nemo quia. Sit ex atque rem illum! Nemo omnis, voluptate nostrum, totam commodi aliquam.</p>
  </div>
 </div>
 
@@ -37,8 +37,8 @@ Home
 <div class="some-farms text-center" style="height: 500px;">
 
   <h1 class="yellow">SOME OF OUR FARMS</h1>
-  <ul>
-    <div class="farms" style="margin-top: 100px">
+
+    <div class="farms">
       <% @sellers[0,8].each do |s| %>
 
       <a href="<%=user_path(s.id)%>">
@@ -59,7 +59,7 @@ Home
         </div>
       </a>
       <% end %>
-    </ul>
+
   </div>
 </div>
 
@@ -67,5 +67,5 @@ Home
 <div class="pattern" style="top: 250px">
 
 </div>
-<div class="footer-banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.9) 0%, rgba(100,100,100,0.3) 50%), url(<%= asset_path 'Image_honeypot.png' %>)">
+<div class="footer-banner" style="background-image: url(<%= asset_path 'Image_honeypot.png' %>)">
 </div>

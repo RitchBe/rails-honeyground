@@ -6,16 +6,9 @@ body {
 
 div.pattern {
 	position:relative;
-	background-image: url(asset_path("pattern.png"));
-	height: 700px;
-	opacity: 0.1;
-	z-index: 1;
-	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(50%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,0)));
 	margin-top:-100px;
-
-
-  position:relative;
-  background-size: 5% 6%;
+  width:100%;
+  background-size: 6% 6%;
   background-image: url(asset_path("pattern.png"));
   margin-top:-100px;
   height: 700px;
@@ -37,26 +30,22 @@ h1 {
 
 h2 {
 	letter-spacing: 3px;
-	font-size: 20px;
+	font-size: 15px;
 }
 
+.home-icons h2 {
+  padding: 5px 0px 15px 0;
+}
 
 h3{
 	letter-spacing: 3px;
-	font-size: 10px;
+	font-size: 11px;
+  padding: 0px 11px;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light" !important;
 }
+
 .text-center {
 	text-align: center;
-
-}
-//cards addresses
-.card-address {
-  letter-spacing: 3px;
-  font-size: 7px;
-  padding: 0 22px;
-  color:#FFFFFF;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
 
 }
 

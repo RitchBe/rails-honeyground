@@ -32,10 +32,6 @@
   padding-top: 15px;
 }
 
-.card-description {
-
-}
-
 .farm-avatar {
   width:120px;
 
@@ -69,4 +65,14 @@
   display: flex;
   flex-direction: column;
   padding-top: 35px;
+}
+
+//cards addresses
+.card-address {
+  letter-spacing: 3px;
+  font-size: 8px;
+  padding: 0 22px;
+  color:#FFFFFF;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
+
 }
