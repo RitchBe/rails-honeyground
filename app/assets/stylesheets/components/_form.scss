@@ -1,0 +1,45 @@
+.title {
+  margin-top: 200px;
+  margin-bottom: 50px;
+  font-size: 100px;
+}
+
+
+// devise/ssessions/new.html.erb
+
+
+.form-container{
+  padding: 20px;
+  width:450px;
+}
+
+.log-in {
+  margin-bottom: 18px;
+  color: #FFF98B;
+  padding: 20px 30px;
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+.btn-form {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+
+.form-links {
+  color: #FFF98B;
+  padding-top: 5px;
+  letter-spacing: 2px;
+  margin-top: 10px !important;
+}
+
+.form-control {
+  &:focus {
+    box-shadow: inset 0 0 3px #FFF98B !important;
+  }
+}
+
+.form-control {
+  border:none;
+}
