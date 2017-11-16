@@ -1,18 +1,19 @@
 #myFooter {
-  color: white;
   width: 100%;
   font-family: "HelveticaNeue-Light";
 }
 
 #myFooter .footer-copyright{
   padding-top:2px;
-  padding-bottom:2px;
+  padding-bottom:4px;
   text-align: center;
 }
 
+
 #myFooter .footer-copyright p{
-  margin:10px;
+  padding: 5px;
   color: white;
+  font-size: 15px;
 }
 
 #myFooter ul{
@@ -23,7 +24,6 @@
 
 #myFooter h2{
   font-size: 15px;
-  font-weight: bold;
   margin-top: 30px;
 }
 
@@ -31,11 +31,11 @@
   color:#d2d1d1;
   text-decoration: none;
   font-size: 13px;
-  font-weight: bold;
 }
 
 #myFooter h2:hover, #myFooter h2:focus{
   text-decoration: none;
+  color: #FFF98B;
 }
 
 #myFooter a:hover, #myFooter a:focus{
@@ -49,12 +49,12 @@
 
 #myFooter .social-networks{
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 38px;
+  padding-top: 18px;
+  padding-bottom: 25px;
 }
 
 #myFooter .social-networks a{
-    font-size: 32px;
+    font-size: 28px;
     margin-right: 5px;
     margin-left: 5px;
     color: #f9f9f9;
@@ -64,19 +64,8 @@
 
 #myFooter .social-networks a:hover{
   text-decoration: none;
+  color: #FFF98B;
 
-}
-
-#myFooter .facebook:hover{
-  color:#0077e2;
-}
-
-#myFooter .google:hover{
-  color:#ef1a1a;
-}
-
-#myFooter .twitter:hover{
-  color: #00aced;
 }
 
 
