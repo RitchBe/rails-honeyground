@@ -1,41 +1,47 @@
 body {
-  background-color: rgb(30,30,30);
-  color: white;
+	background-color: rgb(30,30,30);
+	color: white;
 }
 
 
 div.pattern {
-  position:relative;
-  background-image: url(asset_path("pattern.png"));
-  height: 700px;
-  opacity: 0.1;
-  z-index: 1;
-  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(50%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,0)));
+	position:relative;
+	background-image: url(asset_path("pattern.png"));
+	height: 700px;
+	opacity: 0.1;
+	z-index: 1;
+	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(50%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,0)));
 }
 
 
 .yellow {
-  color: #FFFA77;
+	color: #FFFA77;
 }
 
 h1.yellow {
-  letter-spacing: 3px;
-  font-size: 30px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
+	letter-spacing: 3px;
+	font-size: 30px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
 }
 
 h2.yellow {
-  letter-spacing: 3px;
-  font-size: 20px;
+	letter-spacing: 3px;
+	font-size: 20px;
 }
 
+h0.yellow{
+	letter-spacing: 3px;
+	font-weight: bolder;
+	font-size: 90px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
+}
 .text-center {
-  text-align: center;
+	text-align: center;
 }
 
 
 
 //to change
 .confirm {
-  margin-top: 500px;
+	margin-top: 500px;
 }
