@@ -36,9 +36,7 @@
 <h4> <%= link_to "Delete Product", user_product_path(@product.id), method: 'delete' %></h4>
   <% end %>
 
-<% if @product.photo? %>
-  <%= cl_image_tag @product.photo.path, width: 400, height: 300, crop: :fill %>
-<% end %>
+
 
 
 </div>

@@ -1,7 +1,7 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.9) 0%, rgba(100,100,100,0.3) 50%), url(<%= asset_path 'Image_landing_picture.png' %>)">
+<div class="banner" style="background-image: url(<%= asset_path 'Image_landing_picture.png' %>)">
   <div class="farm-banner-content">
-    <h2 class="yellow">Buy pure honey directly from the farms and local farmers
-    </h2>
+    <h1 class="yellow">BUY PURE HONEY DIRECTLY FROM THE FARMERS
+    </h1>
   </div>
 
 </div>
@@ -34,11 +34,26 @@
 
   <h2 class="yellow">SOME OF OUR FARMS</h2>
   <ul>
+<div class="farms" style="margin-top: 100px">
+    <% @sellers[0,4].each do |s| %>
 
-    <% @sellers[0,5].each do |seller| %>
-  <li><%= seller.name %></li>
+<div class="farm-card">
+  <div class="farm-card-top">
+    <img src="<%= asset_path('Card_banner.png')%>" class="farm-card-image-top" alt="">
+  </div>
+  <div class="farm-avatar">
+    <img src="<%= asset_path('Image_avatar.png')%>" class="card-avatar" alt="">
+
+  </div>
+  <div class="card-footer">
+    <h3 class="yellow text-center"><%= s.name %></h3>
+    <p class="text-center">s.description</p>
+    <%= link_to "See farm",  user_path(s.id), class: "farm-link text-center yellow" %>
+  </div>
+</div>
+<% end %>
 </ul>
-  <% end %>
+</div>
 </div>
 
 
