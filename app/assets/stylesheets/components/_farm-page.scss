@@ -1,60 +1,87 @@
 
 
 hr {
-  height: 1px;
-  border-color: #FFFA77;
-  width: 75%;
+	height: 1px;
+	border-color: #FFFA77;
+	width: 75%;
 }
 .farmer-icons {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 100px;
-  margin-top:-520px;
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 100px;
+	margin-top:-520px;
 }
 
 
 .hive, .since, .validate {
-  width: 20%;
+	width: 20%;
 }
 
 .htilte {
-font-size: 200%;
+	font-size: 200%;
 }
 
-.farm-details{
-	  width: 100%;
-  padding: 0 20%;
-  font-size: 120%;
-  margin-top: 0px;
-  margin-bottom: 0px;
-
-}
-.farm-details-wrap{
-	  background: #F4F4F4;
+.farm-icons {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
-  position: relative;
-  top: 550px;
-
-}
-.farm-description-text {
-  width: 100%;
-  padding: 0 20%;
-  font-size: 120%;
-  margin-top: 100px;
+  justify-content: space-around;
   margin-bottom: 100px;
 }
 
-.wrap {
-  position: relative;
-  bottom: 350px;
+.farm-details{
+	width: 100%;
+	padding: 0 20%;
+	font-size: 120%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+
+}
+.farm-details-wrap{
+	background: #F4F4F4;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100px;
+	padding: 0px 50px;
+	color: rgba(0,0,0,0.3);
+	position: relative;
+	top: 550px;
+
+}
+.farm-description-text {
+	width: 100%;
+	padding: 0 20%;
+	font-size: 120%;
+	margin-top: 100px;
+	margin-bottom: 100px;
 }
 
+.wrap {
+	position: relative;
+	bottom: 350px;
+}
+
+.container-about{
+	position: relative;
+	padding: 5px;
+	margin: 0px auto 0;
+	left:0px;
+	width: 100%;
+	border-color: yellow;
+
+	.content-about {
+		margin-top: -520px;
+	}
+}
+
+#map {
+    width: 100%;
+    height: 100vh;
+    background: blue;
+    flex: 0 0 450px;
+    position: sticky !important;
+    top: 10px !important;
+}
 
 a.add-product {
-  color: #FFFA77;
+	color: #FFFA77;
 }

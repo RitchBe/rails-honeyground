@@ -33,10 +33,10 @@
  </div>
 </div>
 
-
+<hr>
 <div class="some-farms text-center" style="height: 500px;">
 
-  <h2 class="yellow">SOME OF OUR FARMS</h2>
+  <h1 class="yellow">SOME OF OUR FARMS</h1>
   <ul>
 <div class="farms" style="margin-top: 100px">
     <% @sellers[0,4].each do |s| %>
@@ -50,9 +50,9 @@
 
   </div>
   <div class="card-footer">
-    <h3 class="yellow text-center"><%= s.name %></h3>
-    <p class="text-center">s.description</p>
-    <%= link_to "See farm",  user_path(s.id), class: "farm-link text-center yellow" %>
+    <h1 class="yellow text-center"><%= s.name %></h1>
+    <p class="text-center">Confirmed Saler</p>
+    <%= link_to "more about",  user_path(s.id), class: "farm-link text-center yellow" %>
   </div>
 </div>
 <% end %>
