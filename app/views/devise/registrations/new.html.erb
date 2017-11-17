@@ -7,6 +7,7 @@
     <div class="form-inputs">
     <%= f.input :name, required: false %>
     <%= f.input :category, priority: ['User'], collection: ["User","Seller"], default: "User"%>
+    <%= f.input :address, label: "Enter the farms or your address", required: false %>
     <%= f.input :email, required: false %>
     <%= f.input :password, required: false, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: false %>
