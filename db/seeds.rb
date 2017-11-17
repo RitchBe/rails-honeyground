@@ -18,15 +18,32 @@ User.destroy_all
 
 
 USERCATEGORY = ["User", "Seller"]
+ADDRESSES = ["Av. Duque de Ávila 201, 1050-082 Lisboa",
+ "Av. dos Cavaleiros 20, 2790-045 Carnaxide",
+  "Largo Girassol 26, 2775-417 Carcavelos",
+   "Praça dos Pescadores 42, 2825 Costa da Caparica",
+   "Tv. São Domingos de Benfica 13, Lisboa",
+   "AVENIDA REI HUMBERTO II DE ITÁLIA, LISBOA, BOCA DO INFERNO, 2750-800 Cascais",
+   "Av. Rei Humberto II de Italia 7, 2750-800 Cascais",
+   "R. Gurué 16, 2775-581 Carcavelos",
+   "Quinta da Beloura, Rua Mato da Mina, nº19, 2710-692 Sintra",
+   "Alto do Pragal, Av. Cristo Rei, 2800-058 Almada",
+   "Praia Das Palmeiras, São João,Costa De Caparica, 2825-426 Almada",
+   "R. Parque Infantil 1, 2825-328 Costa da Caparica",
+   "Av. de Roma 50, 1700-348 Lisboa",
+   "Jardim Zoológico de Lisboa, Estr. de Benfica 1549, 1500-423 Lisboa",
+   "Rotunda Nuno Rodrigues dos Santos, 2685-220 Portela",
+   "R. Me. Deus 4, 1900-312 Lisboa",
+ ]
 
-puts 'Creating 30 fake Users...'
-30.times do
+puts 'Creating 16 fake Users...'
+16.times do
   User.create(
     email: Faker::Internet.email,
     password: "password",
     name:Faker::Name.name,
     nickname: Faker::Twitter.screen_name,
-    address: Faker::Address.street_address(include_secondary = "Lisbon"),
+    address: ADDRESSES.sample,
     category: USERCATEGORY.sample,
     since: (1970..2017).to_a.sample,
     hives: (50..200).to_a.sample,
@@ -34,10 +51,24 @@ puts 'Creating 30 fake Users...'
   )
 end
 
-HONEYNAME = ["RichyHony","MezquirizGlamour","GonyPonny","HugoBesugo","HoneyLove","MoistHoney"]
+HONEYNAME = ["Comb honey",
+  "Liquid honey",
+  "Granulated honey",
+  "Creamed honey",
+  "HoneyLove",
+  "MoistHoney",
+  "Creamed honey",
+  "Raw",
+  "Pasteurized",
+  "Alfalfa",
+  "Advocado",
+  "Blueberry",
+  "Buckwheat",
+  "Clover"
+]
 
 puts 'Creating 10 fake Products ...'
-30.times do
+10.times do
   product = Product.create(
     name: HONEYNAME.sample,
     price: (20..150).to_a.sample,
@@ -45,7 +76,7 @@ puts 'Creating 10 fake Products ...'
     description: Faker::Beer.style,
     validation: "Uncheck",
     category: Product::CATEGORIES.sample,
-    year: 2016
+    year: (2007..2017).to_a.sample
   )
 
   url = "https://picsum.photos/200/300/?random"
@@ -54,10 +85,10 @@ puts 'Creating 10 fake Products ...'
 end
 
 
-STATUS = ["On it´s way", "Confirmed", "Pending acceptance", "Order awaiting to be confirmed"]
+STATUS = ["On it´s way", "Confirmed", "Unpaid", "Pending acceptance", "Delivering"]
 
-puts 'Creating 30 fake Sales ...'
-30.times do
+puts 'Creating 16 fake Sales ...'
+16.times do
   Sale.create(
     user_id: User.all.sample.id,
     product_id: Product.all.sample.id,
