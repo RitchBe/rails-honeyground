@@ -1,9 +1,9 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error :base %>
+<%= f.error :base %>
 
-<div class="container" style= "margin-top:150px">
-  <div class="row col-xs-12 col-sm-6 col-sm-offset-3">
-    <h2 class="yellow text-center"> Sign up</h2>
+<div class="container" style= "margin-top:50px">
+  <div class="row col-xs-12 col-sm-4 col-sm-offset-4 form-container">
+    <h1 class="yellow text-center"> SIGN UP</h1>
     <div class="form-inputs">
     <%= f.input :name, required: false %>
     <%= f.input :category, priority: ['User'], collection: ["User","Seller"], default: "User"%>

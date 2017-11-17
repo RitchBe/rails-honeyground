@@ -1,6 +1,6 @@
 
 
-.farm-card {
+.product-card {
   position:relative;
   margin-top: 10px;
   margin-left: 40px;
@@ -14,7 +14,7 @@
   border-bottom: 2px solid #171717;
 }
 
-.farm-card:hover {
+.product-card:hover {
   border-bottom: 2px solid #FFFA77;
 }
 
@@ -22,31 +22,31 @@
 a:-webkit-any-link { text-decoration: none !important; }
 
 
-.farm-card-top {
+.product-card-top {
   background-size: contain;
   width:100%;
-  height: 60%;
+  height: 75%;
   overflow:hidden;
   border-radius: 5px 5px 0px 0px;
 }
 
-.farm-card-image-top {
+.product-card-image-top {
     margin-top:-10px;
     margin-left:-30%;
     width:520px; /* you can use % */
     height: auto;
 }
 
-.farm-card-footer {
+.product-card-footer {
   margin: 0;
   padding-top: 15px;
 }
 
-.farm-avatar {
+.product-avatar {
   width:120px;
 
 }
-.farm-avatar-shape {
+.product-avatar-shape {
   position: absolute;
   height: 100px;
   width: 100px;
@@ -57,30 +57,30 @@ a:-webkit-any-link { text-decoration: none !important; }
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
-.yellow-card-line {
-  height:180px;
-  margin-top:-180px;
+.product-card-yellow-line {
+  height:224px;
+  margin-top:-224px;
   margin-left:51%;
   border-left: 1px solid #FFFA77;
   position:relative;
 }
 
-.card-avatar {
-  width: 110px;
-  margin:-21.875% -2.875%;
-  overflow:hidden
-}
 
-.card-footer {
+.product-card-footer-2 {
   display: flex;
   flex-direction: column;
-  padding-top: 35px;
+  margin-top: -6px;
 }
 
-//cards addresses
-.card-address {
+.product-card-footer-2 h3 {
+  font-size: 14px;
+
+}
+
+.product-card-price {
   letter-spacing: 3px;
-  font-size: 8px;
+  font-size: 18px;
+  margin-top: -6px;
   padding: 0 22px;
   color:#FFFFFF;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
