@@ -3,10 +3,8 @@
   width: 300px;
   background-size: cover;
   background-position: center;
-  margin-right: 15%;
+  margin-right:20px;
   border-radius: 5px;
-  box-shadow: 0px 0px 35px #2d4c55;
-
 }
 
 .product-show {
@@ -15,4 +13,37 @@
   space-around: space-around;
   margin-top: -550px;
   margin-bottom: 250px;
+}
+
+
+a.buy-btn {
+    background-color: #FFFA77;
+    color: black;
+    text-decoration:none;
+    border: none;
+    width: 60px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    text-align:left;
+    z-index:99;
+}
+
+.product-info h2{
+  margin-top:10px;
+}
+.buy-button-container {
+  position: relative;
+  display: flex;
+  z-index: 2;
+  margin-top:153px;
+}
+
+.edit-product-buttons-container {
+  position: relative;
+  display: flex;
+  flex-direction:column;
+  z-index: 2;
+  margin-top:142px;
 }
