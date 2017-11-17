@@ -55,3 +55,14 @@ div.orders {
   margin-right: 0;
   margin-left: 0;
 }
+
+.confirm-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.confirm-buy {
+  width: 80%
+}
