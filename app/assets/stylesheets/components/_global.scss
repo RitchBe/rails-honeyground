@@ -8,13 +8,16 @@ div.pattern {
 	position:relative;
 	margin-top:-100px;
   width:100%;
-  background-size: 6% 6%;
   background-image: url(asset_path("pattern.png"));
   margin-top:-100px;
   height: 700px;
   opacity: 0.1;
   z-index: 1;
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(50%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,0)));
+  bottom: 250px;
+  object-fit: cover;
+  overflow: hidden;
+  background-size: 60px;
 }
 
 

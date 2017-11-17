@@ -7,12 +7,9 @@ Home
     <h1 class="yellow">BUY PURE HONEY DIRECTLY FROM THE FARMERS
     </h1>
   </div>
-
-</div>
-<div class="pattern" style="bottom: 250px">
-
 </div>
 
+<div class="pattern"></div>
 
 <div class="home-icons">
  <div class="grid text-center">
@@ -34,19 +31,16 @@ Home
 </div>
 
 <hr>
-<div class="some-farms text-center" style="height: 500px;">
-
+<div class="some-farms text-center">
   <h1 class="yellow">SOME OF OUR FARMS</h1>
-
     <div class="farms">
       <% @sellers[0,8].each do |s| %>
-
       <a href="<%=user_path(s.id)%>">
         <div class="farm-card">
           <div class="farm-card-top">
             <img src="<%= asset_path('Card_banner.png')%>" class="farm-card-image-top" alt="">
           </div>
-          <div class="yellow-card-line"></div>
+          <div class="product-card-price"></div>
           <div class="farm-avatar-shape">
             <div class="farm-avatar">
               <img src="<%= asset_path('Image_avatar.png')%>" class="card-avatar" alt="">
@@ -59,13 +53,10 @@ Home
         </div>
       </a>
       <% end %>
-
   </div>
+  <%= link_to "SEE MORE", index_path, class: "yellow text-center" %>
 </div>
-
-
-<div class="pattern" style="top: 250px">
-
+<div class="pattern">
 </div>
 <div class="footer-banner" style="background-image: url(<%= asset_path 'Image_honeypot.png' %>)">
 </div>
