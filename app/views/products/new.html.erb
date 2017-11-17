@@ -8,6 +8,9 @@
   <%= f.input :name, label: 'Product Name', error: 'Please specify A honey name', required: false %>
   <%= f.input :price, label: 'Price', type: 'float' %>
   <%= f.input :description, label: 'Description', required: false %>
+  <%= f.input :year, label: "Year of production" %>
+  <%= f.input :category, collection: Product::CATEGORIES, default: "Liquid Honey" %>
+
 <div class="photo-btn-div">
   <%= f.input :photo, as: :attachinary, label: "Add a picture" %>
    <!-- <hr class="small" align="left" style="margin-top: 0px;"> -->
