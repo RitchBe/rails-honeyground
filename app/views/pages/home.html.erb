@@ -40,6 +40,9 @@ Home
           <div class="farm-card-top">
             <img src="<%= asset_path('Card_banner.png')%>" class="farm-card-image-top" alt="">
           </div>
+
+          <div class="yellow-card-line"></div>
+
           <div class="product-card-price"></div>
           <div class="farm-avatar-shape">
             <div class="farm-avatar">
@@ -53,10 +56,13 @@ Home
         </div>
       </a>
       <% end %>
+
   </div>
   <div class="see-more">
   <%= link_to "SEE MORE", index_path, class: "form-links text-center" %>
+
   </div>
+  <%= link_to "SEE MORE", index_path, class: "yellow text-center" %>
 </div>
 <div class="pattern">
 </div>
