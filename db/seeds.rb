@@ -35,7 +35,21 @@ ADDRESSES = ["Av. Duque de Ávila 201, 1050-082 Lisboa",
   "Rotunda Nuno Rodrigues dos Santos, 2685-220 Portela",
   "R. Me. Deus 4, 1900-312 Lisboa",
   "R. Amorim 2, 1950-022 Lisboa",
-  "Praça Duque da Terceira 24, 1200-014 Lisboa"
+  "Praça Duque da Terceira 24, 1200-014 Lisboa",
+  "São Domingos de Benfica 15, Lisboa",
+  "AVENIDA REI HUMBERTO II DE ITÁLIA, LISBOA",
+  "Av. Rei Humberto II de Italia 20, 2750-800 Cascais",
+  "R. Gurué 35, 2775-581 Carcavelos",
+  "Rua Mato da Mina 19, 2710-692 Sintra",
+  "Alto do Pragal, Almada",
+  "Praia Das Palmeiras, Almada",
+  "R. Parque Infantil 1, Costa da Caparica",
+  "Av. de Roma 55, Lisboa",
+  "Estr. de Benfica, Lisboa",
+  "Rotunda Nuno Rodrigues dos Santos, Portela",
+  "R. Me. Deus 4, Lisboa",
+  "R. Amorim 2, Lisboa",
+  "Praça Duque da Terceira 24, Lisboa"
  ]
 
 puts 'Creating 16 fake Users...'
@@ -47,6 +61,20 @@ puts 'Creating 16 fake Users...'
     nickname: Faker::Twitter.screen_name,
     address: ADDRESSES.sample,
     category: USERCATEGORY.sample,
+    since: (1970..2017).to_a.sample,
+    hives: (50..200).to_a.sample,
+    validation: "Uncheck"
+  )
+end
+
+1.times do
+  User.create(
+    email: "triboteam@gmail.com",
+    password: "password",
+    name:Faker::Name.name,
+    nickname: Faker::Twitter.screen_name,
+    address: ADDRESSES.sample,
+    category: "Seller",
     since: (1970..2017).to_a.sample,
     hives: (50..200).to_a.sample,
     validation: "Uncheck"
@@ -66,11 +94,26 @@ HONEYNAME = ["Comb honey",
   "Advocado",
   "Blueberry",
   "Buckwheat",
-  "Clover"
+  "Clover",
+  "Premium",
+  "BlackHoney",
+  "RichHorney",
+  "CarlosEdition",
+  "Goney",
+  "Tribo",
+  "Silver",
+  "HoneyPassion",
+  "DeepHoney",
+  "WhiteHoney",
+  "King",
+  "Almond",
+  "FilipeMojo",
+  "Hugoney",
+  "Diegoney"
 ]
 
-puts 'Creating 10 fake Products ...'
-10.times do
+puts 'Creating 50 fake Products ...'
+50.times do
   product = Product.create(
     name: HONEYNAME.sample,
     price: (20..150).to_a.sample,

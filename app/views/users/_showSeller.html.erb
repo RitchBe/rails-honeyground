@@ -328,7 +328,7 @@
 </div>
 
 
-<hr>
+<hr style="margin-top:-70px; margin-bottom:50px;">
 
 <div class="container container-about">
 	<div class="row content-about">
@@ -368,12 +368,12 @@
        <a href="<%=user_product_path(p.user_id, p.id)%>">
            <div class="product-card">
           <div class="product-card-top" >
-            <img src="<%= asset_path 'https://butterflywonderland.com/wp-content/uploads/2016/04/honey1.jpg'%>" class="product-card-image-top" alt="">
+            <img src="<%= asset_path 'default-image-product.jpg'%>" class="product-card-image-top" alt="">
           </div>
           <div class="product-card-yellow-line"></div>
           <div class="product-card-footer-2">
             <h3 class="yellow text-center"><%= p.name.upcase %></h3>
-            <p class="product-card-price text-center">39€</p>
+            <p class="product-card-price text-center"><%= p.price.to_i %>€</p>
           </div>
         </div>
       </a>
