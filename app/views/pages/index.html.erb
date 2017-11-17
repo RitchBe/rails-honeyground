@@ -1,6 +1,6 @@
 
-
-<div id="custom_style" style="width: 100%; height: 300px; margin-top:60px;"></div>
+<div class="map-container">
+<div id="custom_style" class="map-position" style="height: 300px; width: 90%"></div>
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
@@ -11,7 +11,11 @@
         "stylers": [
             {
                 "visibility": "on"
-            }
+              },
+              {
+                "color": "#F5D76E"
+              }
+
         ]
     },
     {
@@ -50,7 +54,10 @@
         "stylers": [
             {
                 "visibility": "off"
-            }
+            },
+             {
+                "color": "#F5D76E"
+              }
         ]
     },
     {
@@ -58,7 +65,7 @@
         "elementType": "geometry.fill",
         "stylers": [
             {
-                "color": "#000000"
+                "color": "#F5D76E"
             },
             {
                 "lightness": 20
@@ -276,9 +283,10 @@
       disableDefaultUI: true
     }
   }, function() {
-      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      markers = handler.addMarkers(<%= raw @hash.to_json %> );
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
+
       if (markers.length == 0) {
         handler.getMap().setZoom(2);
       } else if (markers.length == 1) {
@@ -287,8 +295,9 @@
     });
   <% end %>
 <% end %>
+</div>
 
-<h1 class="yellow text-center our-farms"> OUR FARMS</h2>
+<h1 class="yellow text-center our-farms"> OUR FARMS</h1>
 <hr>
 
 <div class="farms">

@@ -1,4 +1,5 @@
 
+
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
 
@@ -289,6 +290,7 @@
   <% end %>
 <% end %>
 
+
 <div class="farm-banner" style="background-image: url(<%= asset_path 'Card_banner.png' %>)">
 <div class="farm-banner-content text-center">
 		<h1 class="yellow farm-header"><%= @user.name.upcase %></h1>
@@ -304,13 +306,17 @@
 		<div class="grid text-center">
 			<%= image_tag "Hive_icon.png" %>
 			<h2 class="yellow">HIVES</h2>
-			<h1 class="yellow"><%= @user.hives %>35</h1>
+
+			<h1 class="yellow"><%= @user.hives %></h1>
+
 		</div>
 
 		<div class="sticks text-center">
 			<%= image_tag "Since_icon.png" %>
 			<h2 class="yellow">SINCE</h2>
-			<h1 class="yellow"><%= @user.since %>1953</h1>
+
+			<h1 class="yellow"><%= @user.since %></h1>
+
 		</div>
 
 		<div class="star text-center">
