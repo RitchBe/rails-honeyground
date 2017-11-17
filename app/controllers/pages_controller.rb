@@ -10,6 +10,7 @@ class PagesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@sellers) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude
+      marker.infowindow render_to_string(partial: "/shared/seller_card", locals: { user: user })
     end
   end
 end

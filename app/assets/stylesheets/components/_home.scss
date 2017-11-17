@@ -15,3 +15,11 @@
 .some-farms h1{
   padding:40px;
 }
+
+
+.see-more {
+  position: relative;
+  display: flex;
+  z-index: 2;
+  justify-content: center;
+}
