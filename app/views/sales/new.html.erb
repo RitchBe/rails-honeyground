@@ -1,9 +1,20 @@
+
+
+
+<
+<div class="container" style="margin-top: 80px; margin-bottom: 150px;">
+  <div class="row col-xs-12 col-sm-4 col-sm-offset-4 form-container">
+    <h1 class="yellow text-center">Confirm Buy</h1>
 <%= simple_form_for ([@user, @product, @sale]) do |f| %>
-  <%= f.error_notification %>
+<div class="form-inputs" style="margin-top: 50px; margin-bottom: 50px">
+<h2>Product name:<strong> <%= @product.name%></strong></h2>
+<h2 style="margin-bottom: 60px">Your address:<strong> <%=@user.address%></strong></h2>
+
 <!--    # f.input :tracking_number, label: "Enter your tracking number"%>
   # f.input  :status, label: "Enter the status", collection: Sale::STATUS %> -->
-  <%= f.submit "Comfirm", class: "btn btn-primary confirm" %>
+  <%= link_to "Edit Information", edit_user_password_path(@user.id), class: "confirm-btn"%></br></br>
+  <%= f.submit "Comfirm", class: "btn btn-primary confirm-btn" %>
 <% end %>
-
-
-
+</div>
+</div>
+</div>
