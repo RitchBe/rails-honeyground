@@ -7,7 +7,7 @@ class User < ApplicationRecord
        :recoverable, :rememberable, :trackable, :validatable,
        :omniauthable, omniauth_providers: [:facebook]
   validates :name, presence: true
-  validates :nickname, presence: true
+  # validates :nickname, presence: true
   validates :address, presence: true
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
