@@ -1,4 +1,294 @@
 
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+
+    var mapStyle = [  {
+        "featureType": "all",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "saturation": 36
+            },
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 40
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            },
+            {
+                "weight": 1.2
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.country",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#e5c163"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.locality",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#c4c4c4"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.neighborhood",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#e5c163"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 21
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.business",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#FFF964"
+            },
+            {
+                "lightness": "0"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#e5c163"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 18
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#575757"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#2c2c2c"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#999999"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 19
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    }]
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: {id: 'custom_style'},
+    provider: {
+      zoom:      30,
+      center:    new google.maps.LatLng(53.385873, -1.471471),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles:    mapStyle,
+      disableDefaultUI: true
+    }
+  }, function() {
+      markers = handler.addMarkers([
+    {
+      "lat": <%= @user.latitude %>,
+      "lng": <%= @user.longitude %>
+    }]);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+      }
+    });
+  <% end %>
+<% end %>
+
 <div class="farm-banner" style="background-image: url(<%= asset_path 'Card_banner.png' %>)">
 <div class="farm-banner-content text-center">
 		<h1 class="yellow farm-header"><%= @user.name.upcase %></h1>
@@ -36,18 +326,28 @@
 
 <div class="container container-about">
 	<div class="row content-about">
-		<div class="col-sm-8">
+		<div class="col-sm-7">
 			<div class="about-wrap">
 				<div class="raw">
 					<div class="farm-description">
 						<h1 class= "yellow text-center">WHO WE ARE</h1>
-						<p class="farm-description-text text-center">L’ENTREPRISE<br>Miel des Ruisseaux, située à Alma, est un producteur de miel et d’hydromel.  Ses ruchers se retrouvent dans les municipalités d’Alma et de Saint-Gédéon.  Ces derniers regroupent plus de 400 ruches où dans chacune d’elles s’activent  près de 100,000 abeilles.<br><br>NOS PRODUITS<br>Les produits offerts sont le miel, le miel crémeux, le chocolat noir ou au lait  rempli de miel crémeux, le choco-miel et l’hydromel qui se décline en 4 sortes :  l’hydromel régulier, l’hydromel en fût de chêne, l’hydromel aux Bleuets (Le Rêve Bleu)  et le Fleur-de-Lysé.<br><br>HISTORIQUE<br>Patrick Fortier, propriétaire de l’entreprise, fonde Miel des Ruisseaux en 1998.  En 2007, il commence la production de l’hydromel et en devient l’unique producteur  au Saguenay-Lac-Saint-Jean. L’hydromel, un succès pour l’entreprise, gagne 2 médailles  d’argent en 2010 et 2011 ainsi qu’une mention de distinction 2013. L’entreprise est fière de ses réalisations et de son implication en tant que producteur régional d’un produit 100% naturel et écologique.</p>
+						<p class="farm-description-text">
+              L’ENTREPRISE
+              <br><br>
+              Miel des Ruisseaux, située à Alma, est un producteur de miel et d’hydromel.  Ses ruchers se retrouvent dans les municipalités d’Alma et de Saint-Gédéon.  Ces derniers regroupent plus de 400 ruches où dans chacune d’elles s’activent  près de 100,000 abeilles.
+              <br><br><br>
+              NOS PRODUITS
+              <br><br>
+              Les produits offerts sont le miel, le miel crémeux, le chocolat noir ou au lait  rempli de miel crémeux, le choco-miel et l’hydromel qui se décline en 4 sortes :  l’hydromel régulier, l’hydromel en fût de chêne, l’hydromel aux Bleuets (Le Rêve Bleu)  et le Fleur-de-Lysé.<br><br><br>
+              HISTORIQUE
+              <br><br>
+              Patrick Fortier, propriétaire de l’entreprise, fonde Miel des Ruisseaux en 1998.  En 2007, il commence la production de l’hydromel et en devient l’unique producteur  au Saguenay-Lac-Saint-Jean. L’hydromel, un succès pour l’entreprise, gagne 2 médailles  d’argent en 2010 et 2011 ainsi qu’une mention de distinction 2013. L’entreprise est fière de ses réalisations et de son implication en tant que producteur régional d’un produit 100% naturel et écologique.</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-4"  style="display: flex;" >
-			<div id="map"></div>
+		<div class="col-sm-5"  style="display: flex;" >
+			<div id="custom_style" style="width: 100%; height: 800px; margin-right:150px;"></div>
 		</div>
 	</div>
 </div>
