@@ -1,13 +1,17 @@
 .sales-index {
   margin-top: 100px;
   display: flex;
-  justify-content: space-around;
+  display: -webkit-flex;
+  -webkit-justify-content:center;
+  justify-content: center;
 }
 
 
 .sales-container {
   width: 50%;
-  justify-content: center
+  justify-content: center;
+  -webkit-justify-content:center;
+
 }
 
 hr.small {
