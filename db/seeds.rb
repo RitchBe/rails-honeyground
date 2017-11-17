@@ -19,21 +19,23 @@ User.destroy_all
 
 USERCATEGORY = ["User", "Seller"]
 ADDRESSES = ["Av. Duque de Ávila 201, 1050-082 Lisboa",
- "Av. dos Cavaleiros 20, 2790-045 Carnaxide",
+  "Av. dos Cavaleiros 20, 2790-045 Carnaxide",
   "Largo Girassol 26, 2775-417 Carcavelos",
-   "Praça dos Pescadores 42, 2825 Costa da Caparica",
-   "Tv. São Domingos de Benfica 13, Lisboa",
-   "AVENIDA REI HUMBERTO II DE ITÁLIA, LISBOA, BOCA DO INFERNO, 2750-800 Cascais",
-   "Av. Rei Humberto II de Italia 7, 2750-800 Cascais",
-   "R. Gurué 16, 2775-581 Carcavelos",
-   "Quinta da Beloura, Rua Mato da Mina, nº19, 2710-692 Sintra",
-   "Alto do Pragal, Av. Cristo Rei, 2800-058 Almada",
-   "Praia Das Palmeiras, São João,Costa De Caparica, 2825-426 Almada",
-   "R. Parque Infantil 1, 2825-328 Costa da Caparica",
-   "Av. de Roma 50, 1700-348 Lisboa",
-   "Jardim Zoológico de Lisboa, Estr. de Benfica 1549, 1500-423 Lisboa",
-   "Rotunda Nuno Rodrigues dos Santos, 2685-220 Portela",
-   "R. Me. Deus 4, 1900-312 Lisboa",
+  "Praça dos Pescadores 42, 2825 Costa da Caparica",
+  "Tv. São Domingos de Benfica 13, Lisboa",
+  "AVENIDA REI HUMBERTO II DE ITÁLIA, LISBOA, BOCA DO INFERNO, 2750-800 Cascais",
+  "Av. Rei Humberto II de Italia 7, 2750-800 Cascais",
+  "R. Gurué 16, 2775-581 Carcavelos",
+  "Quinta da Beloura, Rua Mato da Mina, nº19, 2710-692 Sintra",
+  "Alto do Pragal, Av. Cristo Rei, 2800-058 Almada",
+  "Praia Das Palmeiras, São João,Costa De Caparica, 2825-426 Almada",
+  "R. Parque Infantil 1, 2825-328 Costa da Caparica",
+  "Av. de Roma 50, 1700-348 Lisboa",
+  "Jardim Zoológico de Lisboa, Estr. de Benfica 1549, 1500-423 Lisboa",
+  "Rotunda Nuno Rodrigues dos Santos, 2685-220 Portela",
+  "R. Me. Deus 4, 1900-312 Lisboa",
+  "R. Amorim 2, 1950-022 Lisboa",
+  "Praça Duque da Terceira 24, 1200-014 Lisboa"
  ]
 
 puts 'Creating 16 fake Users...'
