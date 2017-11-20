@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
 
-    @product = Product.new
+    @location = Location.new
   end
 
   def create
